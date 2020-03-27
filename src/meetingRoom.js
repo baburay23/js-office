@@ -12,7 +12,6 @@ full(){
 empty(){
  this.occupied = false;
  return this.occupied;
-
 }
 enterRoom(){
 if(this.roomBooked === false && this.occupied === true){
