@@ -2,7 +2,13 @@
 class MeetingRoom {
 constructor() {
 this.occupied = false;
-this.roomBooked = false;
+this.roomBooked = true;
+this.setName = this.setName;
+}
+
+roomName(name){
+  this.setName = name;
+   return this.setName;
 }
 
 full(){
@@ -14,13 +20,12 @@ empty(){
  return this.occupied;
 }
 enterRoom(){
-if(this.roomBooked === false && this.occupied === true){
-  return("Room is already booked");
+if(this.roomBooked === true && this.occupied === true){
+  throw new Error("Room is already booked")
 }
 this.roomBooked === false;
   return(this.occupied = true)
 }
-
 
 exitRoom(){
   this.occupied= false;

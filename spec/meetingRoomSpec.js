@@ -26,6 +26,16 @@ describe('MeetingRoom', function(){
   });
   it('raises an error if room is booked', function(){
     meetingRoom.enterRoom();
-    expect(function(){meetingRoom.enterRoom(); }).toThrowError(TypeError, "Room is already booked");
+    expect(function(){meetingRoom.enterRoom(); }).toThrowError("Room is already booked");
   });
+
+  it('can give a name to a meetingroom', function() {
+    meetingRoom.roomName(name)
+    //spyOn(roomName(name)).andReturn(roomName("room1"));
+    expect(meetingRoom.roomName(name)).toBe(name);
+    //i dont feel very confident about this test. i found it hard
+    //to find argument documentation in jasmine.so i did try to use the
+    //jasmine.anything test but it did not seem to work.
+  });
+
 });
