@@ -11,8 +11,10 @@
       <h1 id="OfficeManagement"> Office Management</h1>
       <p>Enter Room</p><br>
       <button id="enterRoom">click to enter</button><br>
+      <p>Exit Room</p></br>
+      <button id="empty">click here to exit</button><br>
       <p>Is room booked?</p><br>
-      <button id="full">click here</button><br>
+      <button id="booked">click here</button><br>
 </section>
 <script src="src/meetingRoom.js"></script>
 <script src="src/office.js"></script>
@@ -30,10 +32,18 @@
 });
   //then the one below should replace the title with the outcome
 
-  $('#full').on('click', function() { // event listener
-  meetingRoom.isRoomBooked(); // update model
-  $('#OfficeManagement').text(meetingRoom.occupied); // update view
+ $('#booked').on('click', function() { // event listener
+   meetingRoom.isRoomBooked(); // update model
+ $('#OfficeManagement').text(meetingRoom.occupied); // update view
+
 });
+
+  $('#empty').on('click', function(){
+   meetingRoom.empty();
+  $('#OfficeManagement').text(meetingRoom.occupied);
+
+});
+
 });
   </script>
  </body>
