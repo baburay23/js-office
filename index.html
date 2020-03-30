@@ -9,20 +9,32 @@
   <body>
     <section>
       <h1 id="OfficeManagement"> Office Management</h1>
-      <p>Is room booked?</p>
-      <button id="full">click here<button>
-      </body>
-    </section>
-      <script src="src/meetingRoom.js"></script>
-    <script src="src/office.js"></script>
-    <script>
-    $(document).ready(function() {
-      var office = new Office();
-      var meetingRoom = new MeetingRoom();
-    $('#OfficeManagement').text(meetingRoom.occupied);
-  })
+      <p>Enter Room</p><br>
+      <button id="enterRoom">click to enter</button><br>
+      <p>Is room booked?</p><br>
+      <button id="full">click here</button><br>
+</section>
+<script src="src/meetingRoom.js"></script>
+<script src="src/office.js"></script>
+<script>
+  $(document).ready(function() {
+    var office = new Office();
+    var meetingRoom = new MeetingRoom();
+  $('#OfficeManagement').text(meetingRoom.occupied);
+
+  //do enter room here
+  $('#enterRoom').on('click', function(){
+    meetingRoom.enterRoom();
+  $('#OfficeManagement').text(meetingRoom.occupied);
+
+});
+  //then the one below should replace the title with the outcome
 
   $('#full').on('click', function() { // event listener
   meetingRoom.isRoomBooked(); // update model
   $('#OfficeManagement').text(meetingRoom.occupied); // update view
-})
+});
+});
+  </script>
+ </body>
+</html>

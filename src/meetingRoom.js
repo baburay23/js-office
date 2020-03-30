@@ -36,8 +36,8 @@ this.occupied;
   return this.occupied;
 }
 isNotBooked(){
-  if this.occupied != false
-  return;
+  if (this.occupied != false);
+  //return this.rooms != false;
 }
 
 }
