@@ -28,12 +28,16 @@ this.roomBooked === false;
 }
 
 exitRoom(){
-  this.occupied= false;
+  this.occupied = false;
 return this.occupied;
 }
 isRoomBooked(){
 this.occupied;
   return this.occupied;
+}
+isNotBooked(){
+  if this.occupied != false
+  return;
 }
 
 }

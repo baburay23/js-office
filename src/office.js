@@ -14,7 +14,7 @@ allRooms(){
  return this.rooms
 }
 availRooms(occupied){
- this.rooms === occupied;
+ this.rooms =! occupied;
  return;
 }
 }
